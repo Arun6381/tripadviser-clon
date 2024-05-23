@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <style>
+        /* Additional CSS for displaying nav-links on the right side */
+        .nav-links {
+            right: unset;
+            left: 0;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+    <title>Tripadvisor</title>
+</head>
+
+<body>
+    <header class="bg-white mt-4">
+        <nav class="flex justify-around items-center w-[92%] mx-auto">
+            <div class="flex items-center gap-4 justify-start">
+                <ion-icon onclick="onToggleMenu(this)" name="menu"
+                    class="text-3xl cursor-pointer md:hidden text-black"></ion-icon>
+            </div>
+            <div class="font-bold flex justify-center items-center">
+                <img class="w-10" src="assets/Tripadvisor_logoset_solid_green.svg" alt="">
+                <span class="text-2xl">Tripadvisor</span>
+            </div>
+            <div
+                class="nav-links z-10 duration-300 md:static absolute md:min-h-fit min-h-[30vh] right-0 top-[-100%] md:w-auto w-full flex items-center px-2">
+                <div
+                    class="flex md:flex-row flex-col md:items-center gap-[2vw] md:gap-[4vw] w-[30%] bg-white text-black box-border">
+                    <button>
+                        <a class="hover:border hover:p-2 hover:bg-gray-200 hover:rounded-3xl text-xl font-semibold"
+                            href="#">Discover</a>
+                    </button>
+                    <button>
+                        <a class="hover:border hover:p-2 hover:bg-gray-200  hover:rounded-3xl text-xl font-semibold "
+                            href="#">Trips</a>
+                    </button>
+                    <button>
+                        <a class="hover:border hover:p-2 hover:bg-gray-200   hover:rounded-3xl text-xl font-semibold  "
+                            href="#">Review</a>
+                    </button>
+                    <button>
+                        <a class="hover:border hover:p-2 hover:bg-gray-200   hover:rounded-3xl text-xl font-semibold  "
+                            href="#">More</a>
+                    </button>
+                    <button class="visible md:hidden">
+                        <a class="hover:border hover:p-2 hover:bg-gray-200   hover:rounded-3xl text-xl font-semibold  "
+                            href="#">More</a>
+                    </button>
+                    <button class="visible md:hidden">
+                        <a class="hover:border hover:p-2 hover:bg-gray-200   hover:rounded-3xl text-xl font-semibold  "
+                            href="#">More</a>
+                    </button>
+                    <button class="visible md:hidden">
+                        <a class="hover:border hover:p-2 hover:bg-gray-200   hover:rounded-3xl text-xl font-semibold  "
+                            href="#">More</a>
+                    </button>
+                </div>
+            </div>
+            <div class="flex justify-around flex-row">
+                <div class="nav-links font-bold p-4 invisible md:visible">INR</div>
+                <div>
+                    <button class="bg-black text-white px-4 py-3 rounded-3xl hover:bg-gray-800">Sign in</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="flex justify-center items-center m-0 md:m-16 flex-col">
+            <div class="font-extrabold text-7xl invisible md:visible">
+                Where to?
+            </div>
+            <div class="font-semibold text-xl md:text-2xl w-[100%]  m-2 md:m-5 pl-5 md:pl-0  ">
+                <ul class="flex justify-center items-center">
+                    <div class="flex gap-10">
+                        <li class=" hover:underline ">Search All</li>
+                        <li class="hover:underline">Hotels</li>
+                        <li class="hover:underline">Things to Do</li>
+                        <li class="hover:underline">Restaurants</li>
+                        <li class="hover:underline">Holiday Homes</li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="flex gap-5 w-full justify-center flex-col md:flex-row p-2 md:p-2 mb-10  ">
+            <div class="w-[100%] md:w-[30%] ">
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="search"
+                        class="block w-full p-4 ps-10 text-sm text-black border border-black rounded-3xl "
+                        placeholder="Search All, Hotels..." required />
+                </div>
+            </div>
+            <button class="py-4 px-10 text-xl font-semibold rounded-3xl bg-green-400 hover:bg-green-200">Search</button>
+        </div>
+        </div>
+        <div class="flex justify-center items-center w-auto md:w-[100%] ">
+            <div
+                class="bg-gradient-to-r from-blue-200 to-purple-200 h-[400px] md:h-[400px] w-[100%] md:w-[50%] border flex flex-row md:m-5 rounded-2xl ">
+                <div class="relative mt-[30%] md:mt-0 flex justify-center items-center"><img
+                        class="flex justify-items-end w-[90%] pr-16 " src="assets/home-gai-entry-dv.png" alt="">
+                </div>
+                <div class="absolute mt-8 md:mt-16  pl-[8%]">
+                    <div class="flex flex-row md:flex-col gap-4">
+                        <div class="flex">
+                            <div class="font-medium flex">Powered by AI</div>
+                            <span class="border flex justify-center  bg-white w-14 h-7 rounded-xl">BETA</span>
+                        </div>
+                        <div class="w-auto md:w-[50%]">
+                            <div class="font-extrabold text-5xl ">Build a trip in minutes</div>
+                            <div class="font-semibold text-2xl ">Get a personalised itinerary just for you, guided by
+                                traveller tips and reviews.</div>
+                            <button
+                                class="bg-purple-950 hover:bg-purple-900 text-white font-bold text-xl m-2 p-3 rounded-3xl">
+                                Start a trip with AI</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-10  pl-5 md:pl-[10%]">
+            <div class="flex flex-col gap-5  ">
+                <div class="text-4xl font-bold ">Stay somewhere award-winning</div>
+                <div class="font-semibold text-2xl">2024’s Travellers’ Choice Awards Best of the Best Hotels</div>
+            </div>
+            <div class="flex relative   mt-10 gap-5 overflow-y-auto">
+                <div class="relative md:w-[130%]">
+                    <img class="z-0 shadow-inner" src="assets/caption.jpg" alt="">
+                    <div
+                        class=" p-0 md:pl-12 w-[50%] absolute text-lg md:text-4xl left-6  md:left-28 font-bold text-white bottom-1 transform -translate-x-1/2 -translate-y-1/2 z-10 ">
+                        Top Hotels
+                    </div>
+                </div>
+                <div class="relative md:w-[130%]">
+                    <img class="z-0 shadow-inner" src="assets/caption (2).jpg" alt="">
+                    <div
+                        class="pl-2 w-[50%] absolute  text-lg md:text-4xl left-6  md:left-28 font-bold text-white bottom-1 transform -translate-x-1/2 -translate-y-1/2 z-10 ">
+                        All-Inclusive
+                    </div>
+                </div>
+                <div class="relative md:w-[130%]">
+                    <img class="z-0 shadow-inner" src="assets/caption (3).jpg" alt="">
+                    <div
+                        class="pl-2 w-[50%] absolute text-lg md:text-4xl left-6  md:left-32 font-bold text-white bottom-1 transform -translate-x-1/2 -translate-y-1/2 z-10 ">
+                        Family-Friends
+                    </div>
+                </div>
+                <div class="relative md:w-[130%]">
+                    <img class="z-0 shadow-inner" src="assets/caption (3).jpg" alt="">
+                    <div
+                        class="pl-2  w-[50%] fixed text-lg md:text-4xl left-6  md:left-32 font-bold text-white bottom-1 transform -translate-x-1/2 -translate-y-1/2 z-10 ">
+                        Family-Friends
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-10 pl-5 md:pl-[10%]">
+            <div class="flex flex-col gap-5  ">
+                <div class="text-4xl font-bold ">You might like these</div>
+                <div class="font-semibold text-2xl">More things to do in Ubud
+                </div>
+            </div>
+            <div class="flex relative   mt-10 gap-5 overflow-y-auto">
+                <div class="relative w-[100%] md:w-[130%]">
+                    <img class="z-0 " src="assets/caption (4).jpg" alt="">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-xl mt-2">All-Inclusive Ubud Tour</div>
+                        <div class="flex gap-2 mt-3">
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="">10,109</div>
+                        </div>
+                        <div class="text-xl font-semibold">from $7,693 per adult</div>
+                    </div>
+
+                </div>
+                <div class="relative w-[100%] md:w-[130%]">
+                    <img class="z-0 shadow-inner" src="assets/caption (5).jpg" alt="">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-xl w-[90%] mt-2">Tokyo 6hr Private tour with government-Linensed
+                            Guide
+                        </div>
+                        <div class="flex gap-2 mt-3">
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="">1,609</div>
+                        </div>
+                        <div class="text-xl font-semibold">from $11,693 per adult</div>
+                    </div>
+                </div>
+                <div class="relative w-[100%] md:w-[130%]">
+                    <img class="z-0 shadow-inner" src="assets/caption (6).jpg" alt="">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-xl mt-2">Lion City Bike TOur of Singapore</div>
+                        <div class="flex gap-2 mt-3">
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+
+                            <div class="">4,109</div>
+                        </div>
+                        <div class="text-xl font-semibold">from $5,693 per adult</div>
+                    </div>
+                </div>
+                <div class="relative w-[100%] md:w-[130%]">
+                    <img class="z-0 shadow-inner" src="assets/caption (6).jpg" alt="">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-xl mt-2">Lion City Bike TOur of Singapore</div>
+                        <div class="flex gap-2 mt-3">
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+                            <div class="w-4 h-4 bg-green-600 rounded-full"></div>
+
+                            <div class="">4,109</div>
+                        </div>
+                        <div class="text-xl font-semibold">from $5,693 per adult</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-10 pl-5 md:pl-[10%]">
+            <div class="flex flex-col gap-5  ">
+                <div class="text-4xl font-bold ">Top experiences on Tripadvisor</div>
+                <div class="font-semibold text-2xl">The best tours, activities and tickets
+                </div>
+            </div>
+            <div class="flex relative mt-10 gap-5 overflow-y-auto">
+
+                <div class="relative ">
+                    <img class="z-0 " src="assets/caption (8).jpg" alt="">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-xl w-[90%] mt-2">Bangkok,Thailand
+                        </div>
+
+                    </div>
+                </div>
+                <div class="relative ">
+                    <img class="z-0 " src="assets/caption (8).jpg" alt="">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-xl w-[90%] mt-2">Bangkok,Thailand
+                        </div>
+
+                    </div>
+                </div>
+                <div class="relative ">
+                    <img class="z-0 r" src="assets/caption (8).jpg" alt="">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-xl w-[90%] mt-2">Bangkok,Thailand
+                        </div>
+
+                    </div>
+                </div>
+                <div class="relative ">
+                    <img class="z-0 r" src="assets/caption (8).jpg" alt="">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-xl w-[90%] mt-2">Bangkok,Thailand
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="p-10 bg-orange-100 gap-3 pl-5 md:pl-[10%] ">
+            <div class="flex flex-col  ">
+                <div class="text-4xl font-bold ">More to explore</div>
+
+            </div>
+            <div class="flex   mt-10 gap-3 overflow-y-auto ">
+
+                <div class=" w-[100%]  ">
+                    <img class="z-0  " src="assets/202d3612-92d0-47cb.jpg" alt="">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-xl mt-5">Hong Kong,China</div>
+
+                    </div>
+                </div>
+                <div class="w-[100%]">
+                    <img class="  " src="assets/202d3612-92d0-47cb.jpg" alt="">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-xl mt-5">Mahabalipuram</div>
+
+                    </div>
+                </div>
+                <div class=" w-[100%]  ">
+                    <img class="  " src="assets/202d3612-92d0-47cb.jpg" alt="">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-xl mt-5">Hong Kong,China</div>
+
+                    </div>
+                </div>
+                <div class=" w-[100%] ">
+                    <img class=" " src="assets/202d3612-92d0-47cb.jpg" alt="">
+                    <div class="flex flex-col">
+                        <div class="font-bold text-xl mt-5">chennai, India</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-10 mt-10 pl-5 md:pl-[10%]">
+            <div class="flex flex-col gap-5   ]">
+                <div class="text-4xl font-bold ">Dream Your Next Trip</div>
+                <div class="font-semibold text-2xl">Weekend getaways from Tiruppur</div>
+            </div>
+            <div class="flex    mt-10 gap-5 overflow-y-auto">
+                <div class="relative w-auto md:w-[130%]">
+                    <img class="" src="assets/upper-bhavani-lake.jpg" alt="">
+                    <div
+                        class="pl-2 w-[50%] absolute text-lg md:text-4xl left-10 md:left-32 font-bold text-white bottom-0 transform -translate-x-1/2 -translate-y-1/2 ">
+                        ooty ,India
+                    </div>
+                </div>
+                <div class="relative md:w-[130%]">
+                    <img class="z-10" src="assets/chennai-madras.jpg" alt="">
+                    <div
+                        class="pl-2 w-[50%] absolute text-lg md:text-4xl left-10 md:left-32 font-bold text-white bottom-0 transform -translate-x-1/2 -translate-y-1/2 ">
+                        chennai, India
+                    </div>
+                </div>
+                <div class="relative md:w-[130%]">
+                    <img class="z-10" src="assets/bahia-de-bengala.jpg" alt="">
+                    <div
+                        class="pl-2 w-[50%] absolute text-lg md:text-4xl left-10 md:left-32 font-bold text-white bottom-0 transform -translate-x-1/2 -translate-y-1/2  ">
+                        Mahabalipuram,india
+                    </div>
+                </div>
+                <div class="relative md:w-[130%]">
+                    <img class="z-10" src="assets/bahia-de-bengala.jpg" alt="">
+                    <div
+                        class="pl-2 w-[50%] absolute text-lg md:text-4xl left-10 md:left-32 font-bold text-white bottom-0 transform -translate-x-1/2 -translate-y-1/2  ">
+                        Mahabalipuram,india
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-10 mt-10 pl-5 md:pl-[10%]">
+            <div class="flex flex-col gap-5 pl-5 ">
+                <div class="text-4xl font-bold ">Top destinations for your next holiday</div>
+                <div class="font-semibold text-2xl">Here's where your fellow travellers are headed</div>
+            </div>
+            <div class="flex relative  mt-10 gap-5 overflow-y-auto">
+                <div class="relative w-[100%] md:w-[130%]">
+                    <img class="z-0 " src="assets/caption (13).jpg" alt="">
+                    <div
+                        class=" pl-2 w-[50%] absolute text-4xl left-28 font-bold text-white bottom-1 transform -translate-x-1/2 -translate-y-1/2 z-10 ">
+                        Tokyo,Japan
+                    </div>
+                </div>
+                <div class="relative md:w-[130%]">
+                    <img class="z-0 shadow-inner" src="assets/caption (14).jpg" alt="">
+                    <div
+                        class="pl-2 w-[50%] absolute text-4xl left-28 font-bold text-white bottom-1 transform -translate-x-1/2 -translate-y-1/2 z-10 ">
+                        Singapore
+                    </div>
+                </div>
+                <div class="relative md:w-[130%]">
+                    <img class="z-0 shadow-inner" src="assets/caption (15).jpg" alt="">
+                    <div
+                        class="pl-2 w-[50%] absolute text-4xl left-32 font-bold text-white bottom-1 transform -translate-x-1/2 -translate-y-1/2 z-10 ">
+                        Hanoi,Vietnam
+                    </div>
+                </div>
+                <div class="relative md:w-[130%]">
+                    <img class="z-0 shadow-inner" src="assets/caption (14).jpg" alt="">
+                    <div
+                        class="pl-2 w-[50%] absolute text-4xl left-28 font-bold text-white bottom-1 transform -translate-x-1/2 -translate-y-1/2 z-10 ">
+                        Singapore
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-5 pl-5 md:pl-[10%]">
+            <div class="flex mt-10  ">
+                <div class="flex flex-col gap-5  ">
+                    <div class="text-lg md:text-4xl font-bold ">Home Rentals Near You</div>
+                    <div class="font-semibold text-sm md:text-2xl">We think you'd enjoy these homes for a quick trip
+                        out of town.
+                    </div>
+                </div>
+                <div class="flex relative  mt-10 gap-5 overflow-y-auto">
+
+                    <div class="relative md:w-[130%]">
+                        <img src="assets/d7.jpg" alt="">
+                        <div class="flex flex-col">
+                            <div class="font-bold text-xl mt-2">Rentals in pondicherryS</div>
+
+                            <div class="text-xl font-semibold">54 rentals</div>
+                        </div>
+                    </div>
+                    <div class="relative md:w-[130%]">
+                        <img src="assets/d7.jpg" alt="">
+                        <div class="flex flex-col">
+                            <div class="font-bold text-xl mt-2">Rentals in pondicherryS</div>
+
+                            <div class="text-xl font-semibold">54 rentals</div>
+                        </div>
+                    </div>
+                    <div class="relative md:w-[130%]">
+                        <img src="assets/d7.jpg" alt="">
+                        <div class="flex flex-col">
+                            <div class="font-bold text-xl mt-2">Rentals in pondicherryS</div>
+
+                            <div class="text-xl font-semibold">54 rentals</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-10 h-auto md:h-[400px] bg-orange-100 flex pl-5 md:pl-[10%] gap-10">
+            <div class="flex flex-col justify-center gap-5 pl-5 w-[40%] ">
+                <div class=""><img src="assets/TC_badge_yellow.svg" alt=""></div>
+                <div class="text-6xl font-bold ">Travellers' Choice Awards Best of the Best</div>
+                <div class="text-xl">Among our top 1% of places, stays, eats, and experiences—decided by you.
+                </div>
+                <button class="bg-black text-white text-xl font-semibold w-3/5 p-2 rounded-3xl hover:bg-slate-800">See
+                    the
+                    Winners</button>
+
+            </div>
+            <div class="w-auto ">
+                <img class="w-[80%] md:w-[90%] h-[80%] md:h-[90%] rounded-full"
+                    style="clip-path: polygon(68% 0, 100% 28%, 31% 100%, 0 72%);" src="assets/download.jpeg" alt="">
+            </div>
+        </div>
+
+
+    </section>
+    <footer>
+        <div class="bg-orange-50 w-auto h-auto ">
+            <div class="p-5 text-2xl font-semibold ">
+                <ul>
+                    <div class="flex ">
+                        <div class="flex">
+                            <img id="toggleButton" class="w-8 cursor-pointer static" onclick="clickHandler()"
+                                src="assets/plus.svg" alt="">About
+                            Tripadvisor
+                        </div>
+                        <div class="show hidden">
+                            <ul>
+                                <li>hi</li>
+                                <li>hello</li>
+                                <li>bye</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="flex"><img class="w-10 " src="assets/plus.svg" alt="">Explore</div>
+                    <div class="flex"><img class="w-10 " src="assets/plus.svg" alt="">Do Business With Us</div>
+                    <div class="flex"><img class="w-10 " src="assets/plus.svg" alt="">Get The App</div>
+                    <div class="flex"><img class="w-10 " src="assets/plus.svg" alt="">Tripadvisor Sites</div>
+                </ul>
+            </div>
+
+            <div class="flex p-2  justify-around">
+                <p>
+                <form action="">
+                    <input class="h-[30px]  font-bold text-2xl text-black rounded-xl outline-none border-none p-[12px]"
+                        type="text" list="currency" name="currencies" placeholder="INR ">
+                    <datalist id="currency">
+                        <option value="USD">US Dollar (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="GBP">British Pound (GBP)</option>
+                        <option value="INR">Indian Rupee (INR)</option>
+                        <option value="JPY">Japanese Yen (JPY)</option>
+
+                    </datalist>
+                </form>
+                </p>
+                <p>
+                <form action="">
+                    <input class="h-[30px]  font-bold text-2xl text-black rounded-xl outline-none border-none p-[12px]"
+                        type="text" list="currency" name="currencies" placeholder="India">
+                    <datalist id="currency">
+                        <option value="USD">US Dollar (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="GBP">British Pound (GBP)</option>
+                        <option value="INR">Indian Rupee (INR)</option>
+                        <option value="JPY">Japanese Yen (JPY)</option>
+
+                    </datalist>
+                </form>
+                </p>
+            </div>
+            <div class="flex ">
+                <div class=""><img class="w-10" src="assets/Tripadvisor_logoset_solid_green.svg" alt=""></div>
+                <div class="">
+                    <div class="">
+                        <p>© 2024 Tripadvisor LLC All rights reserved</p>
+                        <div class="flex underline cursor-pointer gap-10 text-xl font-semibold ">
+                            <button>Terms of Use</button>
+                            <button>Privacy and Cookies Statement</button>
+                            <button><a
+                                    href="https://earth.google.com/web/@0,-0.20559985,0a,22251752.77375655d,35y,0h,0t,0r">site
+                                    Map</a></button>
+                            <button>contact us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="px-5">This is the version of our website addressed to speakers of English in India. If you are
+                a
+                resident of another country
+                or region, please select the appropriate version of Tripadvisor for your country or region in the
+                drop-down menu. <button class="font-bold mb-10">more</button></div>
+        </div>
+    </footer>
+    <script>
+        const navLinks = document.querySelector('.nav-links');
+        function onToggleMenu(e) {
+            e.name = e.name === 'menu' ? 'close' : 'menu';
+            navLinks.classList.toggle('top-[6%]');
+        }
+
+        function clickHandler() {
+            var showDiv = document.querySelector('.show');
+
+            showDiv.classList.toggle('hidden');
+
+
+            var img = document.getElementById('toggleButton');
+
+
+            if (showDiv.classList.contains('hidden')) {
+                img.src = 'assets/plus.svg';
+            } else {
+                img.src = 'assets/minus-line.svg';
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
